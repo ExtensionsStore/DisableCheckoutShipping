@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * DisableCheckoutShipping module config
+ *
+ * @category   Aydus
+ * @package	   Aydus_DisableCheckoutShipping
+ * @author     Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_DisableCheckoutShipping>
+            <version>1.0.0</version>
+        </Aydus_DisableCheckoutShipping>
+    </modules>
+    <frontend>
+	    <events>
+	        <sales_quote_address_collect_totals_before>
+	            <observers>
+	                <disable_checkout_shipping>
+	                    <type>singleton</type>
+	                    <class>aydus_disablecheckoutshipping/observer</class>
+	                    <method>disableCheckoutShipping</method>
+	                </disable_checkout_shipping>
+	            </observers>
+	        </sales_quote_address_collect_totals_before>
+	    </events>    
+    </frontend>
+    <global>
+        <events>
+            <adminhtml_init_system_config>
+                <observers>
+                    <aydus_disablecheckoutshipping_system_config>
+                        <class>aydus_disablecheckoutshipping/observer</class>
+                        <method>addDisableCheckoutShippingFields</method>
+                    </aydus_disablecheckoutshipping_system_config>
+                </observers>
+            </adminhtml_init_system_config>
+        </events>      
+        <helpers>
+            <aydus_disablecheckoutshipping>
+                <class>Aydus_DisableCheckoutShipping_Helper</class>
+            </aydus_disablecheckoutshipping>
+        </helpers>
+        <models>
+            <aydus_disablecheckoutshipping>
+                <class>Aydus_DisableCheckoutShipping_Model</class>
+            </aydus_disablecheckoutshipping>
+        </models>
+    </global>                       
+</config>

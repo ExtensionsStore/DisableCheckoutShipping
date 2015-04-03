@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Disable Checkout Payment module
+ *
+ * @category   Aydus
+ * @package	   Aydus_DisableCheckoutShipping
+ * @author     Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_DisableCheckoutShipping>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Aydus_DisableCheckoutShipping>
+    </modules>
+</config>
