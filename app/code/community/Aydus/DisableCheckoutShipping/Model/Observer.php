@@ -4,7 +4,7 @@
  * DisableCheckoutShipping observer
  *
  * @category   Aydus
- * @package	   Aydus_DisableCheckoutShipping
+ * @package    Aydus_DisableCheckoutShipping
  * @author     Aydus <davidt@aydus.com>
  */
 
@@ -13,8 +13,8 @@ class Aydus_DisableCheckoutShipping_Model_Observer
     /**
      * Add disable_checkout_shipping field to all carrier groups
      *
-     * @param Mage_Core_Model_Observer $observer
-     * @return Aydus_DisableCheckoutShipping_Model_Observer
+     * @param Varien_Event_Observer $observer
+     * @return Varien_Event_Observer
      */
     public function addDisableCheckoutShippingFields($observer)
     {
@@ -31,9 +31,17 @@ class Aydus_DisableCheckoutShipping_Model_Observer
                 'ups' => 11,
                 'usps' => 11,
                 'dhlint' => 11,
-                'shipper' => 11,
-                'customcalendar' => 11,
         );
+        
+        $carriers = array_keys((array)$carrierGroups);
+        
+        foreach ($usualCarrierGroups as $carrier => $position){
+            
+            if (!in_array($carrier, $carriers)){
+                $observer->setAddedDisableCheckoutShippingFields(false);
+                return $observer;
+            }
+        }        
         
         $usualCarrierGroupsKeys = array_keys($usualCarrierGroups);
     
@@ -55,22 +63,25 @@ class Aydus_DisableCheckoutShipping_Model_Observer
                 $disableCheckoutShipping->addChild('sort_order', $sortOrder);
                 $disableCheckoutShipping->addChild('show_in_default', 1);
                 $disableCheckoutShipping->addChild('show_in_website', 1);
-                $disableCheckoutShipping->addChild('show_in_store', 1);
+                $disableCheckoutShipping->addChild('show_in_store', 0);
                 $disableCheckoutShipping->addChild('comment', 'Disable from front end checkout shipping methods.');
                 
             }
             	
         }
     
-        return $this;
+        $observer->setAddedDisableCheckoutShippingFields(true);
+            
+        return $observer;
     }
         
     /**
      * 
      * Disable carrier if frontend shipping method is disabled
      * 
+     * @see sales_quote_address_collect_totals_before
      * @param Varien_Event_Observer $observer
-     * @return Aydus_DisableCheckoutShipping_Model_Observer
+     * @return Varien_Event_Observer
      */
     public function disableCheckoutShipping($observer)
     {
@@ -84,6 +95,7 @@ class Aydus_DisableCheckoutShipping_Model_Observer
             $quoteId = $quote->getId();
             
             $store = Mage::app()->getStore($quote->getStoreId());
+            $storeId = $store->getId();
             $carriers = $store->getConfig('carriers');
             
             foreach ($carriers as $code => $configAr){
@@ -95,10 +107,10 @@ class Aydus_DisableCheckoutShipping_Model_Observer
                 }
                 
             }
-            
+                        
         }
         
-        return $this;
+        return $observer;
     }
    
 }

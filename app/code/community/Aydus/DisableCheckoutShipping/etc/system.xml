@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!-- 
+/** 
+ * System config
+ *
+ * @category   Aydus
+ * @package    Aydus_DisableCheckoutShipping
+ * @author     Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <sections>
+        <carriers>
+            <groups>
+                <flatrate>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </flatrate>
+                <freeshipping>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </freeshipping>
+                <tablerate>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </tablerate>
+                <dhl>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </dhl>
+                <fedex>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </fedex>
+                <ups>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </ups>
+                <usps>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </usps>
+                <dhlint>
+                    <fields>
+                        <disable_checkout_shipping translate="label" module="aydus_disablecheckoutshipping">
+                            <label>Disable Checkout Shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Disable from front end checkout shipping methods.]]></comment>
+                        </disable_checkout_shipping>                                            
+                    </fields>
+                </dhlint>
+            </groups>
+        </carriers>
+    </sections>
+</config>
+

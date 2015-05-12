@@ -4,30 +4,24 @@
  * DisableCheckoutShipping module config
  *
  * @category   Aydus
- * @package	   Aydus_DisableCheckoutShipping
+ * @package    Aydus_DisableCheckoutShipping
  * @author     Aydus <davidt@aydus.com>
  */
 -->
 <config>
     <modules>
         <Aydus_DisableCheckoutShipping>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Aydus_DisableCheckoutShipping>
     </modules>
-    <frontend>
-	    <events>
-	        <sales_quote_address_collect_totals_before>
-	            <observers>
-	                <disable_checkout_shipping>
-	                    <type>singleton</type>
-	                    <class>aydus_disablecheckoutshipping/observer</class>
-	                    <method>disableCheckoutShipping</method>
-	                </disable_checkout_shipping>
-	            </observers>
-	        </sales_quote_address_collect_totals_before>
-	    </events>    
-    </frontend>
-    <global>
+    <phpunit>
+        <suite>
+            <modules>
+                <Aydus_DisableCheckoutShipping />
+            </modules>
+        </suite>
+    </phpunit>        
+    <adminhtml>
         <events>
             <adminhtml_init_system_config>
                 <observers>
@@ -37,7 +31,22 @@
                     </aydus_disablecheckoutshipping_system_config>
                 </observers>
             </adminhtml_init_system_config>
-        </events>      
+        </events>        
+    </adminhtml>
+    <frontend>
+        <events>
+            <sales_quote_address_collect_totals_before>
+                <observers>
+                    <disable_checkout_shipping>
+                        <type>singleton</type>
+                        <class>aydus_disablecheckoutshipping/observer</class>
+                        <method>disableCheckoutShipping</method>
+                    </disable_checkout_shipping>
+                </observers>
+            </sales_quote_address_collect_totals_before>
+        </events>    
+    </frontend>
+    <global>
         <helpers>
             <aydus_disablecheckoutshipping>
                 <class>Aydus_DisableCheckoutShipping_Helper</class>

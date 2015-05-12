@@ -1,0 +1,2 @@
+config:
+    default/carriers/flatrate/disable_checkout_shipping: 1

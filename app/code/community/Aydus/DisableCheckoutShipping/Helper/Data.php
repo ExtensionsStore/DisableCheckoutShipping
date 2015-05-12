@@ -4,7 +4,7 @@
  * DisableCheckoutShipping helper
  *
  * @category   Aydus
- * @package	   Aydus_DisableCheckoutShipping
+ * @package    Aydus_DisableCheckoutShipping
  * @author     Aydus <davidt@aydus.com>
  */
 
