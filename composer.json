@@ -1,0 +1,18 @@
+{
+    "name": "aydus/disablecheckoutshipping",
+    "license": "GPL-3.0",
+    "type": "magento-module",
+    "description": "Disable specific shipping methods from displaying on the checkout. Disabled methods will still be enabled in the admin and can be used to create orders in the admin.",
+    "homepage": "https://github.com/aydus/DisableCheckoutShipping.git",
+    "require": {
+        "php": ">=5.3",
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "David Tay",
+            "email": "davidt@aydus.com",
+            "role": "Author/Maintainer"
+        }
+    ]
+}
